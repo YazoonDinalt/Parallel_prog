@@ -50,42 +50,27 @@ class StackTestWithoutElim {
         .check(this::class)
 }
 
-
-
 class StackDriverTest {
-    private val stackDriver = TreiberStackWithoutElimination<Int>()
+    private val stack = TreiberStackWithoutElimination<Int>()
 
     @Test
     fun `test pushing element to stack`() {
-        stackDriver.push(42)
-        //assertEquals(1, stackDriver.size)
-        assertEquals(42, stackDriver.top())
+        stack.push(42)
+        assertEquals(42, stack.top())
     }
 
     @Test
     fun `test popping element from stack`() {
-        stackDriver.push(100)
-        val poppedElement = stackDriver.pop()
-        //assertEquals(0, stackDriver.size)
+        stack.push(100)
+        val poppedElement = stack.pop()
         assertEquals(100, poppedElement)
     }
 
     @Test
     fun `test peeking element from stack`() {
-        stackDriver.push(10)
-        stackDriver.push(20)
-        //assertEquals(2, stackDriver.size)
-        assertEquals(20, stackDriver.top())
+        stack.push(10)
+        stack.push(20)
+        assertEquals(20, stack.top())
     }
 
-    @Test
-    fun `test stack is empty`() {
-        //assertTrue(stackDriver.isEmpty())
-    }
-
-    @Test
-    fun `test stack is not empty after pushing element`() {
-        stackDriver.push(5)
-        //assertFalse(stackDriver.isEmpty())
-    }
 }
