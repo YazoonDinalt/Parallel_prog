@@ -35,10 +35,6 @@ suspend fun testStaticWithout() = coroutineScope{
 
     }
 
-    for (i in 1..100){
-        
-    }
-
     println("Время выполнения на статических данных без элиминации: $executionTime нс")
 
 }
