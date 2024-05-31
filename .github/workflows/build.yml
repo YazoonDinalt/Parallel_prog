@@ -3,7 +3,7 @@ name: Run build and test for Task 4
 on: 
   push: 
     branches:
-      - master
+      - main
     paths: 
       - Task4/src/**
       - .github/workflows/builds.yml
@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
